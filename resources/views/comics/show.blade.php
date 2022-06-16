@@ -1,10 +1,10 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="comic">
+    <div class="comic py-4">
         <div class="container">
             <h1>{{ $comic->series }}</h1>
-            <div class="row">
+            <div class="row py-3">
                 <div class="col-3">
                     <img class="img-fluid flex-grow-1" src="{{ $comic->thumb }}" alt="">
                 </div>

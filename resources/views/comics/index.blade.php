@@ -1,9 +1,14 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="comics">
+    <div class="comics py-4">
         <div class="container">
-            <h1>Comics</h1>
+            <div class="top d-flex justify-content-between align-items-center">
+                <h1>Comics</h1>
+                <div class="new">
+                    <a class="btn btn-sm btn-primary" href="{{route('comics.create')}}">New Comic</a>
+                </div>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
