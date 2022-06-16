@@ -1,6 +1,7 @@
 @extends('layout.app')
 
 @section('content')
+<div class="comics">
     <div class="container">
         <h1>Comics</h1>
         <table class="table table-striped">
@@ -23,13 +24,17 @@
                 <tr>
                     <th scope="row">{{$comic->id}}</th>
                     <td>{{$comic->title}}</td>
-                    <td>{{$comic->description}}</td>
                     <td>
-                        <img src="{{$comic->thumb}}" alt="">
+                        <p style="max-width: 400px;" class="text-truncate">
+                            {{$comic->description}}
+                        </p>
                     </td>
-                    <td>{{$comic->price}}</td>
+                    <td>
+                        <img width="50px" src="{{$comic->thumb}}" alt="">
+                    </td>
+                    <td class="text-nowrap">$ {{$comic->price}}</td>
                     <td>{{$comic->series}}</td>
-                    <td>{{$comic->sale_date}}</td>
+                    <td class="text-nowrap">{{$comic->sale_date}}</td>
                     <td>{{$comic->type}}</td>
                     <td class="actions"></td>
                 </tr>      
@@ -37,4 +42,5 @@
             </tbody>
         </table>
     </div>
+</div>
 @endsection
