@@ -4,11 +4,11 @@
     <div class="comic">
         <div class="container">
             <h1>{{ $comic->series }}</h1>
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-3">
                     <img class="img-fluid flex-grow-1" src="{{ $comic->thumb }}" alt="">
                 </div>
-                <div class="col-9 text-justify">
+                <div class="col-9">
                     <h2>{{ $comic->title }}</h2>
                     <p>{{ $comic->description }}</p>
                     <div>
