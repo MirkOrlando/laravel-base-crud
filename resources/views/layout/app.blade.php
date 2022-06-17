@@ -52,7 +52,7 @@
         <small>All Rights Reserved &copy;2022</small>
     </footer>
 
-    <script src="{{ asset('js/app,js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 
