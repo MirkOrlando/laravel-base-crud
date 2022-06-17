@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use App\Http\Requests\ComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -14,7 +15,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
+        $comics = Comic::orderByDesc('id')->get();
         //dd($comics);
         return view('comics.index', compact('comics'));
     }
@@ -35,11 +36,11 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
-        //dd($request->all());
-        $data = $request->all();
-        Comic::create($data);
+        $validated_data = $request->validateD();
+        //dd($validated_data);
+        Comic::create($validated_data);
         //pattern POST-REDIRECT-GET
         return redirect()->route('comics.index');
     }
